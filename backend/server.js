@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
 import path from "path";
@@ -197,6 +200,7 @@ app.get("/api/advisor/calls/:callId/summary", async (req, res) => {
     res.status(500).json({ error: "Summary fetch failed" });
   }
 });
+console.log("PYTHON_PATH FROM ENV =", process.env.PYTHON_PATH);
 
 
 const PORT = 4000;
